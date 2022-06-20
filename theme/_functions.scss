@@ -1,4 +1,0 @@
-@function getRelativeFontSize($fixedSize) {
-    $relativeSize : ($fixedSize/12)+rem;
-    @return $relativeSize
-}
