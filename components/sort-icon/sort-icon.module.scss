@@ -1,0 +1,12 @@
+.sort__icon{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sort__icon_selected {
+    background-color: #dfdfdf;
+}

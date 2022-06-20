@@ -1,0 +1,17 @@
+.breadcrumbs {
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    font-weight: 500;
+    color:#10489b;
+    padding-bottom: 20px;
+    & > div {
+        display: flex;
+        &>div:nth-child(2) {
+            padding: 0px 5px;
+        }
+    }
+    &>div:last-child {
+        color:#788091;
+    }
+}

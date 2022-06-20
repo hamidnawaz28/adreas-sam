@@ -1,0 +1,11 @@
+@import './functions';
+
+$font-family: 'Helvetica';
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+$h1-size: getRelativeFontSize(32);
+$h2-size: getRelativeFontSize(24); 
+$xlarge-size:  getRelativeFontSize(18); 
+$large-size:getRelativeFontSize(16) ;
+$normal-size: getRelativeFontSize(14);
+$small-size: getRelativeFontSize(12);
