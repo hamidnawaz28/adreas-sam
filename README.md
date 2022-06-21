@@ -1,7 +1,14 @@
 # ADREAS Sample
 
 To run tests locally, enter the following command in the terminal at the root of the project.
-`npm run dev`.
+
+- `yarn`
+- `npm run test`.
+
+To run app locally, enter the following command in the terminal at the root of the project.
+
+- `yarn`
+- `npm run dev`.
 
 ## Code Structure
 

@@ -1,26 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { auditLogs as getAuditLogs } from "../api/auditLogs";
 import { AuditLogs, FilterProps } from "../ts/common";
-import { compare } from "../utils/utility";
-
-const filterUniqueEntries = <DataType, ObjectType>(
-  data: DataType[],
-  value: ObjectType
-) => {
-  let appTypes = data
-    .map((el: any) => el[value])
-    .filter((el: string) => el != null);
-
-  return (appTypes = appTypes.filter(
-    (val, index, acc) => acc.indexOf(val) === index
-  ));
-};
-
-const rangeFilter = <DataType,>(data: DataType[], page: number) => {
-  return data.filter(
-    (_, index) => index >= page * 10 && index < page * 10 + 10
-  );
-};
+import {
+  compare,
+  filterUniqueEntries,
+  rangeFilter,
+  getTimeStamp,
+} from "../utils/utility";
 
 const useFilter = ({ ...props }: FilterProps) => {
   const {
@@ -79,6 +65,10 @@ const useFilter = ({ ...props }: FilterProps) => {
             ? el.applicationType == applicationType
             : true && actionType != ""
             ? el.actionType == actionType
+            : true && fromDate != ""
+            ? getTimeStamp(el.creationTimestamp) >= getTimeStamp(fromDate)
+            : true && toDate != ""
+            ? getTimeStamp(el.creationTimestamp) <= getTimeStamp(toDate)
             : true
         ) || [];
 
